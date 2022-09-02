@@ -1,0 +1,25 @@
+{
+  "name": "com.kalkuz.attributes",
+  "version": "0.0.1",
+  "displayName": "Kalkuz Editor Attributes",
+  "description": "Attributes to help Editor to look better, ordered, clean and fancier.",
+  "category": "Tools",
+  "unity": "2020.3",
+  "unityRelease": "21f1",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "licensesUrl": "",
+  "dependencies": {
+  },
+  "keywords": [
+    "scripts",
+    "tools",
+    "attribute",
+    "attributes"
+  ],
+  "author": {
+    "name": "Oğuzhan Kalkuz",
+    "email": "oguzhan@kalkuz.me",
+    "url": ""
+  }
+}
