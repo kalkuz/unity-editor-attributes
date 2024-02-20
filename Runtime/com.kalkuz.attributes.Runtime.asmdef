@@ -1,6 +1,6 @@
 {
     "name": "com.kalkuz.attributes.Runtime",
-    "rootNamespace": "KalkuzSystems.Attributes",
+    "rootNamespace": "Kalkuz.Attributes",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

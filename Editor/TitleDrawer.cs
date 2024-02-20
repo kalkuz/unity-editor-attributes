@@ -1,38 +1,39 @@
-﻿using System.Linq;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
-namespace KalkuzSystems.Attributes
+namespace Kalkuz.Attributes.Editor
 {
-    [CustomPropertyDrawer(typeof(TitleAttribute))]
-    internal sealed class TitleDrawer : DecoratorDrawer
+  [CustomPropertyDrawer(typeof(TitleAttribute))]
+  internal sealed class TitleDrawer : DecoratorDrawer
+  {
+    private readonly GUIStyle _style = new()
     {
-        private readonly GUIStyle style = new GUIStyle()
-        {
-            richText = true,
-            fontStyle = FontStyle.Bold, 
-            alignment = TextAnchor.MiddleCenter
-        };
-        
-        public override void OnGUI(Rect position)
-        {
-            var att = attribute as TitleAttribute;
-            if (att == null) return;
+      richText = true,
+      fontStyle = FontStyle.Bold,
+      alignment = TextAnchor.MiddleCenter
+    };
 
-            if (att.titleAlignment == TitleAlignment.LEFT) style.alignment = TextAnchor.MiddleLeft;
-            else if (att.titleAlignment == TitleAlignment.RIGHT) style.alignment = TextAnchor.MiddleRight;
+    public override void OnGUI(Rect position)
+    {
+      if (attribute is not TitleAttribute att) return;
 
-            style.fontSize = att.fontSize;
+      _style.alignment = att.TitleAlignment switch
+      {
+        TitleAlignment.Left => TextAnchor.MiddleLeft,
+        TitleAlignment.Right => TextAnchor.MiddleRight,
+        _ => _style.alignment
+      };
 
-            EditorGUI.LabelField(position, $"<color={att.fontColor}>{att.header}</color>", style);
-        }
+      _style.fontSize = att.FontSize;
 
-        public override float GetHeight()
-        {
-            var att = attribute as TitleAttribute;
-            
-            float fullTextHeight = EditorStyles.boldLabel.CalcHeight(new GUIContent(att.header), 1.0f);
-            return EditorGUIUtility.singleLineHeight * 1.5f + (fullTextHeight);
-        }
+      EditorGUI.LabelField(position, $"<color={att.FontColor}>{att.Header}</color>", _style);
     }
+
+    public override float GetHeight()
+    {
+      if (attribute is not TitleAttribute att) return EditorGUIUtility.singleLineHeight * 1.5f;
+      var fullTextHeight = EditorStyles.boldLabel.CalcHeight(new GUIContent(att.Header), 1.0f);
+      return EditorGUIUtility.singleLineHeight * 1.5f + (fullTextHeight);
+    }
+  }
 }

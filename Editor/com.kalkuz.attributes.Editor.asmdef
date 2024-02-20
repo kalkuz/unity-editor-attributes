@@ -1,6 +1,6 @@
 {
     "name": "com.kalkuz.attributes.Editor",
-    "rootNamespace": "KalkuzSystems.Attributes",
+    "rootNamespace": "Kalkuz.Attributes",
     "references": [
         "GUID:968607a3cd200034e8919a47847f88c3"
     ],

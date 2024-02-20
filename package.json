@@ -4,8 +4,8 @@
   "displayName": "Kalkuz Editor Attributes",
   "description": "Attributes to help Editor to look better, ordered, clean and fancier.",
   "category": "Tools",
-  "unity": "2020.3",
-  "unityRelease": "21f1",
+  "unity": "2023.3",
+  "unityRelease": "10f1",
   "documentationUrl": "",
   "changelogUrl": "",
   "licensesUrl": "",
@@ -20,6 +20,6 @@
   "author": {
     "name": "Oğuzhan Kalkuz",
     "email": "oguzhan@kalkuz.me",
-    "url": ""
+    "url": "https://kalkuz.me"
   }
 }
